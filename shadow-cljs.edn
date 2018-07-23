@@ -1,0 +1,16 @@
+{:source-paths ["src"]
+
+ :dependencies [[reagent "0.8.1"]
+                [antizer "0.2.2"]
+                [secretary "1.2.3"]
+                [antizer "0.2.2"]
+                [venantius/accountant "0.2.4"]]
+
+ :builds {:app {:target :browser
+                :output-dir "public/js"
+                :asset-path "js"
+                :modules {:main {:entries [ppl.core]}}
+                :devtools {:before-load ppl.core/stop
+                           :after-load ppl.core/start
+                           :http-root "public"
+                           :http-port 8020}}}}
